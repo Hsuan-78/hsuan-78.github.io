@@ -1,0 +1,105 @@
+/* 基本樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(to right, #f3e6f7, #d6c6e5); /* 漸變背景 */
+    color: #444; /* 默認文字顏色，使用更深的灰色以提高可讀性 */
+}
+
+/* section 修改 */
+section {
+    margin: 3rem 0; /* 增加上下的間距 */
+    padding: 2rem; /* 增加內部間距 */
+    border-radius: 10px; /* 圓角 */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* 增加陰影 */
+    background: white; /* 背景為白色 */
+    text-align: center; /* 置中內容 */
+}
+.keyword {
+    display: inline-block; /* 使標籤並排顯示 */
+    background-color: #7b7fbc; /* 標籤背景 */
+    color: #ffffff; /* 字體顏色 */
+    padding: 0.5rem 1rem; /* 內部間距 */
+    border-radius: 5px; /* 圓角 */
+    margin: 0.5rem; /* 標籤之間的間距 */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* 添加過渡效果 */
+}
+
+.keyword:hover {
+    background-color: #d067b4; /* 懸停時改變背景顏色 */
+    transform: scale(1.1); /* 懸停時放大效果 */
+}
+
+/* Header and Navigation */
+header {
+    background: #6292bc; /* 深藍色 */
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* 確保在其他內容之上 */
+}
+
+nav ul {
+    list-style-type: none; /* 去除列表標記 */
+    display: flex;
+    justify-content: space-around; /* 均勻分配 */
+}
+
+nav ul li a {
+    color: #ffffff; /* 白色字體 */
+    text-decoration: none; /* 去除下劃線 */
+    padding: 0.5rem 1rem; /* 增加內部間距 */
+}
+
+/* 更改標題的顏色 */
+h1, h2 {
+    color: #c180c2; /* 使用柔和的橘色調，更加吸引眼球 */
+}
+
+/* 更改段落的顏色 */
+p {
+    color: #666; /* 中度灰色，使文字柔和，與背景更協調 */
+}
+
+/* Card style */
+.project-card {
+    background: #ffffff; /* 白色背景 */
+    padding: 1.5rem; /* 增加內部Padding */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgb(97, 97, 97,0.2); /* 增加陰影 */
+    transition: transform 0.3s ease; /* 增加過渡效果 */
+}
+
+.project-card:hover {
+    transform: scale(1.05); /* 鼠標懸停縮放效果 */
+}
+
+.view-project {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #7b7fbc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.view-project:hover {
+    background-color: #d067b4;
+}
+
+/* Footer */
+footer {
+    background: #4a6f90; /* 深藍色 */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
