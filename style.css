@@ -1,4 +1,13 @@
-/* 基本樣式 */
+
+/* 基礎設置 */
+:root {
+    --primary-color: #6292bc;
+    --secondary-color: #7b7fbc;
+    --accent-color: #d067b4;
+    --text-color: #444;
+    --bg-gradient: linear-gradient(to right, #f3e6f7, #d6c6e5);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,98 +17,151 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background: linear-gradient(to right, #f3e6f7, #d6c6e5); /* 漸變背景 */
-    color: #444; /* 默認文字顏色，使用更深的灰色以提高可讀性 */
+    background: var(--bg-gradient);
+    color: var(--text-color);
 }
 
-/* section 修改 */
-section {
-    margin: 3rem 0; /* 增加上下的間距 */
-    padding: 2rem; /* 增加內部間距 */
-    border-radius: 10px; /* 圓角 */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* 增加陰影 */
-    background: white; /* 背景為白色 */
-    text-align: center; /* 置中內容 */
-}
-.keyword {
-    display: inline-block; /* 使標籤並排顯示 */
-    background-color: #7b7fbc; /* 標籤背景 */
-    color: #ffffff; /* 字體顏色 */
-    padding: 0.5rem 1rem; /* 內部間距 */
-    border-radius: 5px; /* 圓角 */
-    margin: 0.5rem; /* 標籤之間的間距 */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* 添加過渡效果 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.keyword:hover {
-    background-color: #d067b4; /* 懸停時改變背景顏色 */
-    transform: scale(1.1); /* 懸停時放大效果 */
-}
-
-/* Header and Navigation */
+/* Header 樣式 */
 header {
-    background: #6292bc; /* 深藍色 */
+    background: var(--primary-color);
     padding: 1rem;
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000; /* 確保在其他內容之上 */
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 2rem;
+    height: 100%;
 }
 
 nav ul {
-    list-style-type: none; /* 去除列表標記 */
+    list-style: none;
     display: flex;
-    justify-content: space-around; /* 均勻分配 */
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
 
 nav ul li a {
-    color: #ffffff; /* 白色字體 */
-    text-decoration: none; /* 去除下劃線 */
-    padding: 0.5rem 1rem; /* 增加內部間距 */
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
 }
 
-/* 更改標題的顏色 */
-h1, h2 {
-    color: #c180c2; /* 使用柔和的橘色調，更加吸引眼球 */
+nav ul li a:hover {
+    color: var(--accent-color);
 }
 
-/* 更改段落的顏色 */
-p {
-    color: #666; /* 中度灰色，使文字柔和，與背景更協調 */
+/* 主要區域樣式 */
+.hero-section {
+    padding-top: 80px;
 }
 
-/* Card style */
+.profile-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+/* 關鍵字標籤 */
+.keywords {
+    margin: 1rem 0;
+}
+
+.keyword {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    margin: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.keyword:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* 作品集區域 */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
 .project-card {
-    background: #ffffff; /* 白色背景 */
-    padding: 1.5rem; /* 增加內部Padding */
+    width: 100%;
+    background: white;
+    padding: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgb(97, 97, 97,0.2); /* 增加陰影 */
-    transition: transform 0.3s ease; /* 增加過渡效果 */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
 .project-card:hover {
-    transform: scale(1.05); /* 鼠標懸停縮放效果 */
+    transform: translateY(-5px);
 }
 
-.view-project {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #7b7fbc;
-    color: white;
-    text-decoration: none;
+.project-card img {
+    max-width: 100%;
+    height: auto;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
 
-.view-project:hover {
-    background-color: #d067b4;
+/* 聯絡方式區域 */
+#contact {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 3rem;
+}
+
+#contact i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
 }
 
 /* Footer */
 footer {
-    background: #4a6f90; /* 深藍色 */
+    background: var(--primary-color);
     color: white;
     text-align: center;
     padding: 1rem;
+    margin-top: 3rem;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .project-card {
+        flex: 0 1 100%;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
 }
